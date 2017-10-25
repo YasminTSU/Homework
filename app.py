@@ -1,3 +1,5 @@
+# This file will test the funtions of Movies
+
 from movie import Movie
 from user import User
 import json
