@@ -1,0 +1,41 @@
+"""
+This is a WIP on the student at my school who held internships.
+"""
+
+class LinkedStudents:
+  def __init__(self):
+    # This class is responsible for methods that raise NotImplementedError.
+    self.__root = None
+    
+  def get_root(self):
+    return self.__root
+    
+  def add_to_list(self, node):
+    node.set_next(self.__root)
+    self.node = node
+    if self.__root != None:
+      node = self.__root
+      
+    
+  
+class StudentNode:
+  def __init__(self, name, id, year, intern):
+    self.name = name
+    self.id = id
+    self.year = year
+    self.intern = intern
+    self.__next = None
+  
+  def set_next(self, node):
+    # This method will set a next node iff it's of same class or 'None'
+    if isinstance(node, Node) or node is None:
+      self.__next = node
+    else:
+      raise TypeError("The 'next node must be of type Node or None.")
+    
+  def get_next(self):
+    return self.__next
+  
+  def print_details(self):
+    print "{}: {} year {}".format(self.id, self.name, self.year, self.intern)
+  
