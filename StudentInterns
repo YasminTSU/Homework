@@ -1,48 +1,47 @@
-"""
-This is a WIP on the student at my school who held internships.
-"""
+class Node:
+    def __init__(self):
+        self.__root = None
 
-class LinkedStudents:
-  def __init__(self):
-    # This class is responsible for methods that raise NotImplementedError.
-    self.__root = None
-    
-  def get_root(self):
-    return self.__root
-    
-  def add_to_list(self, node):
-    if self.__root:
-      node.set_next(self.__root)
-    self.__root = node
-  
-  def print_list(self):
-    marker = self.__root
-    while marker = self.__root
-      if marker == name:
-        return marker
-      marker = marker.get_next()
-  
-      
-    
-  
+    def get_root(self):
+        return self.__root
+
+    def add_to_list(self, node):
+        if self.__root:
+            node.set_next(self.__root)
+        self.__root = node
+
+    def print_list(self):
+        marker = self.__root
+        while marker:
+            marker.print_details()
+            marker = marker.get_next()
+
+    def find(self, name):
+        marker = self.__root
+        while marker:
+            if marker.name == name:
+                return marker
+            marker = marker.get_next()
+        raise LookupError("Name {} was not found in linkedlist".format(name))
+
+
 class StudentNode:
-  def __init__(self, name, id, year, intern):
-    self.name = name
-    self.id = id
-    self.year = year
-    self.intern = intern
-    self.__next = None
-  
-  def set_next(self, node):
-    # This method will set a next node iff it's of same class or 'None'
-    if isinstance(node, Node) or node is None:
-      self.__next = node
-    else:
-      raise TypeError("The 'next node must be of type Node or None.")
-    
-  def get_next(self):
-    return self.__next
-  
-  def print_details(self):
-    print "{}: {} year {}".format(self.id, self.name, self.year, self.intern)
-  
+    def __init__(self, name, id, year, intern):
+        self.name = name
+        self.id = id
+        self.year = year
+        self.intern = intern
+        self.__next = None
+
+    def set_next(self, node):
+        # This method will set a next node iff it's of same class or 'None'
+        if isinstance(node, Node) or node is None:
+            self.__next = node
+        else:
+            raise TypeError("The 'next node must be of type Node or None.")
+
+    def get_next(self):
+        return self.__next
+
+    def print_details(self):
+        print "{}: {} year {}".format(self.id, self.name, self.year, self.intern)
