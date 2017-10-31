@@ -7,6 +7,7 @@ import json
 user = User("Jose")
 user.add_movie("The Matrix", "Sci-Fi")
 user.add_movie("The Hangover", "Comedy")
+user.add_movie("Frozen", "Animation"
 
 
 with open('my_file.txt', 'w') as f:
