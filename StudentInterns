@@ -11,10 +11,17 @@ class LinkedStudents:
     return self.__root
     
   def add_to_list(self, node):
-    node.set_next(self.__root)
-    self.node = node
-    if self.__root != None:
-      node = self.__root
+    if self.__root:
+      node.set_next(self.__root)
+    self.__root = node
+  
+  def print_list(self):
+    marker = self.__root
+    while marker = self.__root
+      if marker == name:
+        return marker
+      marker = marker.get_next()
+  
       
     
   
