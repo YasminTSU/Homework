@@ -24,7 +24,6 @@ class Node:
             marker = marker.get_next()
         raise LookupError("Name {} was not found in linkedlist".format(name))
 
-
 class StudentNode:
     def __init__(self, name, id, year, intern):
         self.name = name
