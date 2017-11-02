@@ -1,4 +1,3 @@
-
 class Node:
     def __init__(self, name, phone):
         self.name = name
@@ -31,9 +30,26 @@ class LinkedList():
         self.__root = node
 
     def remove_end_from_list(self, node):
-        marker = root
+        marker = self.__root
+
+        if not marker.get_next():
+            self.__root = None
+            return marker
+
+        # Iterates over Nodes that have values
         while marker:
-            pass
+            next_node = marker.get_next()
+            if next_node.get_next():
+                if not next_node.get_next():
+                    marker.set_next(None)
+                    return next_node
+            marker = marker.get_next()
+
+    def print_list(self):
+        marker = self.__root
+        while marker:
+            marker.print_details()
+            marker = marker.get_next()
 
     def find(self, name):
         marker = self.__root
@@ -55,3 +71,12 @@ class LinkedQueue:
     def pop(self, node):
         self.__linked_list.remove_end_from_list(node)
         raise NotImplementedError()
+
+    def find(self, name):
+        return self.__linked_list.find(name)
+
+    def print_details(self):
+        return self.__linked_list.print_list()
+
+    def __len__(self):
+        return self.__linked_list.size()
