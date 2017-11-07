@@ -1,0 +1,36 @@
+"""
+- Implement a method to perform basic string compression using the counts of repeated characters method.
+
+- non-alphabet characters will be ignored
+
+- Example: "aaaabb  ..c" --> "a4b2c1"
+"""
+
+def compress(str1):
+  
+  compress = []
+  count = 0
+
+  # Here I am ignoring all non-alphabet characters  
+
+  alpha = "".join([x for x in str1 if x.isalpha()])
+  prev = alpha[0]
+  
+  # Here I begin compressing
+  for char in alpha:
+    if char == prev:
+      count += 1 
+    
+    else:
+      compress += prev + str(count)
+      count = 1 
+      prev = char
+      
+  # Stores the results if a final "if-statement is neccessary"
+  compress += prev + str(count)
+  compress = "".join(compress)
+  return compress
+
+# will test with     s = "AAA214897  &Wwww"
+
+print compress("AAA214897  &Wwww")
